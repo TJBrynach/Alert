@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Update</title>
+</head>
+<body>
+	<h1>Update Alert</h1>
+	<form action="/submit_new" method="post">
+		<label for="priority">Priority Rating: </label>
+		<select id="priority" name="priority" onchange="populateModels()">
+			<option value="high">High</option>
+			<option value="medium">Medium</option>
+			<option value="low">Low</option>
+		</select><br>
+		<label for="repeat">Repeat Issue: </label>
+		<select id="repeat" name="repeat" onchange="populateModels()">
+			<option value="yes">Yes</option>
+			<option value="no">No</option>
+		</select><br>
+		<label for="app-team">Application Team:</label>
+		<select id="app-team" name="app-team" onchange="populateModels()">
+			<option value="pretrade">PreTrade</option>
+			<option value="executions">Executions</option>
+			<option value="intraday">Intraday Risk</option>
+			<option value="eod">EOD</option>
+		</select><br>
+
+		<label for="impacted-app">Impacted Application:</label>
+		<select id="impacted-app" name="impacted-app"></select>
+
+		<script>
+			function populateModels() {
+			var makeSelect = document.getElementById("app-team");
+			var modelSelect = document.getElementById("impacted-app");
+			modelSelect.innerHTML = "";
+
+			var make = makeSelect.options[makeSelect.selectedIndex].value;
+			if (make === "pretrade") {
+				var models = ["D3", "DataMarket", "Guardian", "XC60", "XC90"];
+			} else if (make === "executions") {
+				var models = ["ProTrade", "SmartTrade"];
+			} else if (make === "intraday") {
+				var models = ["ActivePivot", "HedgeIT", "Fusion"];
+			} else if (make === "eod") {
+				var models = ["DataLake", "MSX", "Adobe Insight", "UTS", "Q5"];
+			} else {
+				var models = [];
+			}
+
+			for (var i = 0; i < models.length; i++) {
+				var option = document.createElement("option");
+				option.value = models[i];
+				option.text = models[i];
+				modelSelect.add(option);
+			}
+			}
+		</script><br>
+		<label for="desc">Brief Description:</label><br>
+		<input type="email" id="email" name="email"><br>
+		<label for="phone">Business Impact:</label><br>
+		<input type="tel" id="phone" name="phone"><br>
+		<label for="desc">Impacted Users:</label><br>
+		<input type="email" id="email" name="email"><br>
+		<label for="phone">Latest Update:</label><br>
+		<input type="tel" id="phone" name="phone"><br>
+		<label for="phone">Resolved Time:</label><br>
+		<input type="tel" id="phone" name="phone"><br>		
+
+	</form>
+	<input type="submit" value="Submit">
+
+</body>
+</html>
