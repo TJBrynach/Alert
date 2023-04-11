@@ -66,14 +66,15 @@ function bothScripts() {
 }
 
 function printVariables() {
-	console.log(priority.value);
-	console.log(repeat.value);
-	console.log(team.value);
-	console.log(app.value);
-	console.log(desc.value)
-	console.log(bizimpact.value)
-	console.log(users.value)
-	console.log(update.value)
-	output.innerHTML = "x = " + priority.value + "<br>y = " + desc.value + "<br>z = " + users.value;
+    var priority = localStorage.getItem("priority");
+    var repeat = localStorage.getItem("repeat");
+    var team = localStorage.getItem("app-team");
+    var app = localStorage.getItem("impacted-app");
+    var desc = document.getElementById("desc").value;
+    var bizimpact = document.getElementById("bizimpact").value;
+    var users = document.getElementById("users").value;
+    var update = document.getElementById("update").value;
 
+    var output = document.getElementById("output");
+    output.innerHTML = "Priority Rating = " + priority + "<br>Repeat Issue = " + repeat + "<br>Application Team = " + team + "<br>Impacted Application = " + app + "<br>Brief Description = " + desc + "<br>Business Impact = " + bizimpact + "<br>Impacted Users = " + users + "<br>Latest Update = " + update;
 }
