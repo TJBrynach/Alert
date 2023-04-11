@@ -2,18 +2,19 @@
 <html>
 <head>
 	<title>Retro</title>
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
 	<h1>New Alert</h1>
 	<form action="/submit_new" method="post">
 		<label for="priority">Priority Rating: </label>
-		<select id="priority" name="priority" onchange="populateModels()">
+		<select id="priority" name="priority" onchange="savePriority()">
 			<option value="high">High</option>
 			<option value="medium">Medium</option>
 			<option value="low">Low</option>
 		</select><br>
 		<label for="repeat">Repeat Issue: </label>
-		<select id="repeat" name="repeat" onchange="populateModels()">
+		<select id="repeat" name="repeat" onchange="saveRepeat()">
 			<option value="yes">Yes</option>
 			<option value="no">No</option>
 		</select><br>
@@ -69,4 +70,5 @@
 	<input type="submit" value="Submit">
 
 </body>
+<script src="js/script.js"></script>
 </html>
