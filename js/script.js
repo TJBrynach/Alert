@@ -1,26 +1,35 @@
 function savePriority() {
-	// Get the value of the selected color
 	var priority = document.getElementById("priority").value;
-	// Get the value of the selected number
-	// var number = document.getElementById("number").value;
+
 	// Save the variables
-	localStorage.setItem("favoriteColor", priority);
-	// localStorage.setItem("favoriteNumber", number);
-	alert("Variable priority saved!");
+	localStorage.setItem("priority", priority);
+
 	console.log(priority)
-	// console.log(number)
 }
 
 function saveRepeat() {
-	// Get the value of the selected color
 	var repeat = document.getElementById("repeat").value;
-	// Get the value of the selected number
-	// var number = document.getElementById("number").value;
+
 	// Save the variables
-	localStorage.setItem("favoriteColor", repeat);
-	// localStorage.setItem("favoriteNumber", number);
-	alert("Variable repeat saved!");
+	localStorage.setItem("repeat", repeat);
+
 	console.log(repeat)
-	// console.log(number)
 }
 
+function saveTeam() {
+	var team = document.getElementById("app-team").value;
+
+	// Save the variables
+	localStorage.setItem("app-team", team);
+
+	console.log(team)
+}
+
+function saveApp() {
+	var app = document.getElementById("impacted-app").value;
+
+	// Save the variables
+	localStorage.setItem("impacted-app", app);
+
+	console.log(app)
+}

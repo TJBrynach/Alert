@@ -19,7 +19,7 @@
 			<option value="no">No</option>
 		</select><br>
 		<label for="app-team">Application Team:</label>
-		<select id="app-team" name="app-team" onchange="populateModels()">
+		<select id="app-team" name="app-team" onchange="populateModels(); saveTeam()">
 			<option value="pretrade">PreTrade</option>
 			<option value="executions">Executions</option>
 			<option value="intraday">Intraday Risk</option>
@@ -27,7 +27,7 @@
 		</select><br>
 
 		<label for="impacted-app">Impacted Application:</label>
-		<select id="impacted-app" name="impacted-app"></select>
+		<select id="impacted-app" name="impacted-app" onchange="saveApp()"></select>
 
 		<script>
 			function populateModels() {
