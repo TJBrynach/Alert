@@ -1,3 +1,29 @@
+function populateModels() {
+	var makeSelect = document.getElementById("app-team");
+	var modelSelect = document.getElementById("impacted-app");
+	modelSelect.innerHTML = "";
+
+	var team = makeSelect.options[makeSelect.selectedIndex].value;
+	if (team === "pretrade") {
+		var app = ["D3", "DataMarket", "Guardian", "XC60", "XC90"];
+	} else if (team === "executions") {
+		var app = ["ProTrade", "SmartTrade"];
+	} else if (team === "intraday") {
+		var app = ["ActivePivot", "HedgeIT", "Fusion"];
+	} else if (team === "eod") {
+		var app = ["DataLake", "MSX", "Adobe Insight", "UTS", "Q5"];
+	} else {
+		var app = [];
+	}
+
+	for (var i = 0; i < app.length; i++) {
+		var option = document.createElement("option");
+		option.value = app[i];
+		option.text = app[i];
+		modelSelect.add(option);
+	}
+}
+
 function savePriority() {
 	var priority = document.getElementById("priority").value;
 
@@ -34,11 +60,20 @@ function saveApp() {
 	console.log(app)
 }
 
-function printVariables() {
+function bothScripts() {
+	populateModels()
+	saveTeam()
+}
 
-	console.log(priority); // prints 10
-	console.log(repeat); // prints "hello"
-	// console.log(team); // prints true
-	//console.log(app); // prints true
-	console.log(desc)
+function printVariables() {
+	console.log(priority.value);
+	console.log(repeat.value);
+	console.log(team.value);
+	console.log(app.value);
+	console.log(desc.value)
+	console.log(bizimpact.value)
+	console.log(users.value)
+	console.log(update.value)
+	output.innerHTML = "x = " + priority.value + "<br>y = " + desc.value + "<br>z = " + users.value;
+
 }
