@@ -33,3 +33,12 @@ function saveApp() {
 
 	console.log(app)
 }
+
+function printVariables() {
+
+	console.log(priority); // prints 10
+	console.log(repeat); // prints "hello"
+	// console.log(team); // prints true
+	//console.log(app); // prints true
+	console.log(desc)
+}

@@ -57,17 +57,16 @@
 			}
 		</script><br>
 		<label for="desc">Brief Description:</label><br>
-		<input type="email" id="email" name="email"><br>
-		<label for="phone">Business Impact:</label><br>
-		<input type="tel" id="phone" name="phone"><br>
-		<label for="desc">Impacted Users:</label><br>
-		<input type="email" id="email" name="email"><br>
-		<label for="phone">Latest Update:</label><br>
-		<input type="tel" id="phone" name="phone"><br>
+		<input type="email" id="desc" name="email"><br>
+		<label for="biz-impact">Business Impact:</label><br>
+		<input type="tel" id="biz-impact" name="phone"><br>
+		<label for="impacted-users">Impacted Users:</label><br>
+		<input type="email" id="impacted-users" name="email"><br>
+		<label for="update">Latest Update:</label><br>
+		<input type="tel" id="update" name="phone"><br>
 		
-
 	</form>
-	<input type="submit" value="Submit">
+	<button type="submit" value="Submit" onclick="printVariables()">Button</button>
 
 </body>
 <script src="js/script.js"></script>
